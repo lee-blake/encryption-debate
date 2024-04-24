@@ -1,5 +1,5 @@
 # The Encryption Debate
-This is a short project illustrating the challenges of regulating encryption. It is part of CS239: 
+This is a short project illustrating the challenges of regulating encryption. It is part of CS239: Social and Professional Issues
 
 ## Play the game
 You can access the game [here](https://lee-blake.github.io/encryption-debate/).
