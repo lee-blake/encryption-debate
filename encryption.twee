@@ -1,0 +1,481 @@
+:: StoryTitle
+Encryption
+
+
+:: StoryData
+{
+  "ifid": "0FA3B935-6379-42DD-9474-656721E60E4C",
+  "format": "Harlowe",
+  "format-version": "3.3.8",
+  "start": "start",
+  "zoom": 1
+}
+
+
+:: backdoor0 {"position":"300,550","size":"100,100"}
+### Installing backdoors in encryption
+One common proposal is to deliberately weaken encryption so that law enforcement can bypass it. The difficulty lies in doing this in a way that preserves the security against anyone else (hackers, eavesdroppers, etc). Usually, this needs to be accomplished by granting law enforcement access via a key. The reason is if usage of a method alone was enough to break encryption, anyone involved in the implementation - or who even read documents about it - could theoretically break all such uses of that encryption. This causes two main problems.
+
+[[Can't we just crack the encryption like hackers do?->cracking]]
+[[What are these problems?->backdoor1]]
+
+
+:: backdoor1 {"position":"300,675","size":"100,100"}
+### Installing backdoors in encryption
+First, there is incredible potential for abuse. The government could easily use this to spy on dissidents or political opponents. Even if you think the US government as a whole is a force for good, remember that Richard Nixon was caught spying on the opposing party. Additionally, individual employees may abuse that power to spy on their people they know.
+
+[[What's the other reason not to do this?->backdoor2]]
+
+
+:: backdoor2 {"position":"300,800","size":"100,100"}
+### Installing backdoors in encryption
+Second, there is the difficulty of maintaining security. Suppose for a minute that the government had a key that could unlock any encryption used in the country. Suppose also that a hacker gets a hold of the key. All of a sudden, they could read any digital data in the country. Worse yet, it would not just apply going forward, but retroactively as well. If they intercepted *any* encrypted communication after the backdoor was installed, they would be be able to crack it with the key.  Every financial transaction, medical record, and state secret would be fair game. The hacker would be able to commit theft and identity fraud on a simply massive scale.
+
+Essentially, if one has the government key, encryption may as well not exist. All security is lost instantly.
+
+[[What if we don't use the same key for everything?->backdoor3]]
+
+
+:: backdoor3 {"position":"300,925","size":"100,100"}
+### Installing backdoors in encryption
+Requiring different keys for each piece of hardware or software only marginally alleviates the problems. While the compromise of a single key only then compromises a single computer, the problem comes from aggregation. With hundreds of millions of devices, the government will need to store a massive number of keys in a manner where they can be accessed readily. This means that some sort of database is a must. If that database is compromised - whether by mistakes in security or just by some government employee who wants to make some extra money on the side - the security implications are essentially the same as if the one universal key in the previous scenario is compromised. 
+
+The reason for this is simple: automation. An attacker simply needs to use any heuristic the police use to associate a suspect with the relevant key to their device. By automating this heuristic, the attack may be conducted on scales that would be impossible for a human. Even if the heuristic only works 1% of the time, that's over 3 million Americans whose devices are compromised. This illustrates how we cannot always apply the rules from the analog world to the digital one: digital problems can often be readily scaled to affect massive numbers of people in a way that analog ones cannot.
+
+[[Is there anything else I should know?->backdoor4]]
+
+
+
+:: backdoor4 {"position":"300,1050","size":"100,100"}
+### Installing backdoors in encryption
+The debate around adding backdoors is not new. The Electronic Frontier Foundation, a nonprofit that focuses on civil liberty issues in computing, has documented <a href="https://www.eff.org/deeplinks/2015/04/clipper-chips-birthday-looking-back-22-years-key-escrow-failures" target="_blank">regular attempts</a> by the government to add backdoors to encryption technology.
+
+One of the more famous attempts to add a backdoor was the Clipper Chip incident in the 1990s. To summarize, the government attempted to require chips to be used for encrypted phone communications so police could bypass encryption for the purpose of wiretapping. This implementation used the "multiple keys" method. This proposal cause an outcry in the security community and led to development of many of the widely used open-source cryptography tools we see today. A more detailed history can be found <a href="https://www.cryptomuseum.com/crypto/usa/clipper.htm" target="_blank">here</a>.
+
+One thing worth noting is that one company did implement the Clipper Chip. Soon afterwards, it was found that it was possible to replace the key used for encryption in the devices. This meant that the phone could be modified to be used without allowing government bypass of the encryption. In other words, this implementation introduced a security vulnerability *and* failed to accomplish its intended purpose because criminals could simply modify it to prevent wiretapping.
+
+[[I think adding a backdoor is the best option.->backdoorConsequences]]
+[[I'd like to look at other options before I decide.->lawRoot]]
+
+
+:: backdoorConsequences {"position":"300,1175","size":"100,100"}
+### Adding a backdoor
+Here are the plausible consequences of legally adding backdoors to encryption.
+
+#### Winners
+* Law enforcement & domestic spy agencies: The use of the new backdoors has made the job of the police, FBI, and intelligence agencies somewhat easier. Arrests and convictions have increased somewhat and a few busts of organized crime rings have made it into the headlines.
+* Foreign spy agencies: A few well-placed bribes have leaked significant numbers of keys to the backdoor to other great powers. As a result, it is easier than ever for foreign powers to surveil residents of and companies in the United States.
+* Cybercriminals: Backdoor keys have also made it to the black market. While their future use has been somewhat blunted by the eventual disclosure of this risk by the federal government, the personal information of several million people has also gone up for sale, increasing identity theft. On the plus side, the increase in this type of crime means there are more arrests for it.
+
+#### Losers
+* Domestic corporations: Industrial espionage has increased in severity in the wake of the leaks of backdoor keys. Foreign companies have capitalized on the leak of some American trade secrets.
+* Dissidents: Dissidents of foreign countries who reside in the US are now more surveilled than ever. There have been a couple of prominent assassinations in the US after the backdoor keys were leaked. Domestic dissidents have not experienced a crackdown yet, but the new laws have chilled a few into ceasing their political activities.
+* Victims of identity theft: While not the majority of people in the US, a substantial number were victims of identity theft as a result of backdoor keys being compromised. These people are now enraged at the government security personnel who let this happen.
+* Organized crime: A few prominent organized crime rings were compromised due to the new backdoors. However, the remaining ones have developed their own means of avoiding detection digitally, whether it is encryption software that illegally contains no backdoor or other methods of data obfuscation.
+* Petty criminals: Similarly, a number of petty criminals did not realize the government could look at all of their files and were therefore caught in short order.
+
+[[Play again->start]]
+
+
+:: banEncryption {"position":"450,550","size":"100,100"}
+### Banning encryption
+This choice is fair to everyone, but only because it applies equally and is more or less equally bad for all parties involved.
+
+[[Digital commerce needs encryption to function->digitalCommerce]]. As a result, the online economy would essentially collapse overnight if encryption were banned. 
+
+[[Could we solve this via cryptocurrencies? Or blockchain?->blockchain]]
+
+[[The problems with encryption are severe enough that we should ban its use.->banEncryptionConsequences]]
+[[I'd like to look at other options before I decide.->lawRoot]]
+
+
+:: banEncryptionConsequences {"position":"625,550","size":"100,100"}
+### Banning encryption
+Here are the plausible consequences of banning encryption.
+
+#### Winners
+* Law enforcement & domestic spy agencies: Online, there is nowhere to hide from the police, FBI, and intelligence agencies. They even get to pad their arrest numbers by charging people with the new crime of "use of cryptography".
+* Foreign spy agencies: Banning encryption has made it easier than ever for foreign powers to surveil residents of and companies in the United States.
+* Cybercriminals: Despite the ban on encryption, some individuals and companies still keep digital records. Unfortunately for them, these are easier for cybercriminals to steal since they no longer need the encryption key to access them.
+
+#### Losers
+* Domestic corporations: The collapse of the digital economy resulting from the ban on encryption has created mass unemployment. While this has thankfully driven down wages, profits of brick-and-mortar stores have also decreased as so many customers are no longer spending money. Furthermore, this mass unemployment has driven unrest and looting, increasing the costs of shrinkage and insurance.
+* Dissidents: Dissidents of foreign countries who reside in the US are now more surveilled than ever. There have been a couple of prominent assassinations in the US after encryption was banned. Domestic dissidents have yet to experience a crackdown, but the fear that one is coming soon has chilled some into ceasing their activism.
+* Ordinary people: With the collapse of the economy, a moderate increase of identity theft does not even register on most people's radar. Almost everyone is worse off financially, and mass unrest has many afraid of what the future might hold.
+* Organized crime: A few prominent organized crime rings were caught because they kept using encryption. However, the remaining ones have adopted other means of avoiding detection digitally, such as data obfuscation.
+* Petty criminals: Similarly, a number of petty criminals did not realize the government could look at all of their files and were therefore caught in short order.
+
+[[Play again->start]]
+
+
+:: blockchain {"position":"450,675","size":"100,100"}
+### Solving digital transaction issues via blockchain
+In short, you can't. The crypto in cryptocurrency refers to cryptography. Cryptography covers encryption and decryption. Cryptocurrencies fundamentally utilize encryption as part of how they operate. The same is true of blockchain.
+
+[[More blockchain!->lose]]
+(link: "Back")[(undo:)]
+
+
+:: commercialPurposes0 {"position":"200,250","size":"100,100"}
+### Restricting encryption to commercial purposes
+Another approach that tries to minimize encryption as an obstacle to law enforcement while still maintaining a digital economy is to require encryption to be used only for a limited set of purposes, with the minimum being payments and data security. However, such restriction on use comes with significant disadvantages.
+
+[[What are these disadvantages?->commercialPurposes1]]
+
+
+
+
+:: commercialPurposes1 {"position":"75,175","size":"100,100"}
+### Restricting encryption to commercial purposes
+First off, can individuals use it to secure their own financial information? If not, why do your details get protected when you are making a purchase, but remain unsecured from identity thieves when you, say, prepare your tax return? In this case, by restricting encryption to make investigation of crimes easier, the government will have also made it easier to commit crimes like identity theft. It's also important to consider that [[criminals might not follow encryption laws->criminalsAndEncryption]]. As such, there is a very real possibility that this approach increases negative impact of crime.
+
+If instead, any protection of sensitive information is an acceptable use, but other everyday uses are restricted, this becomes a nightmare for the vast majority of users. Someone without technical knowledge may accidentally apply encryption to some documents that are acceptable and some that are not, thereby committing a crime simply by mistake. 
+
+[[Are there any other drawbacks?->commercialPurposes2]]
+
+
+:: commercialPurposes2 {"position":"50,450","size":"100,100"}
+### Restricting encryption to commercial purposes
+There is the question of the right to privacy. Privacy protections in the physical world do not distinguish between the content of activities. There is no exemption in the Fourth Amendment that police can search your house without a warrant, but only your book collection while doing so. There is no federal law saying that you can put curtains on your windows, but only on certain rooms (although some homeowner's association somewhere might have such rules). Accordingly, privacy protection via encryption should be permitted regardless of content (although the content itself may constitute a crime, that is a separate matter, much as it is in the physical world). 
+
+[[We should pass laws that limit encryption to commercial purposes.->commercialPurposesConsequences]]
+[[I'd like to look at other options before I decide.->lawRoot]]
+
+
+:: commercialPurposesConsequences {"position":"0,575","size":"100,100"}
+### Limiting encryption to commercial purposes.
+Here are the plausible consequences of limiting encryption to commercial purposes.
+
+#### Winners
+* Law enforcement & domestic spy agencies: Law enforcement expected more results from these laws. While they have a new offense to charge people with - "unlawful use of encryption" - they are still finding it difficult to break organized crime rings. The reason is that many have turned to concealing the communications within financial documents. These agencies are once again pushing for backdoors to be installed in encryption.
+* Foreign spy agencies: Banning encryption for non-commercial purposes has made it easier than ever for foreign powers to surveil residents of the United States.
+* Cybercriminals: Due to the confusion on which records it is OK to encrypt, some individuals have left sensitive information unprotected. There has been some increase in identity theft as a result. However, there has been significant innovation in the field of cybercrime. Cybercriminals have turned to blackmailing of individuals with non-commercial secrets that they would not want to see publicly released. This new form of crime may have originated with ransomware, but has exploded in popularity with all of those unencrypted non-commerical photos and documents.
+
+#### Losers
+* Dissidents: Dissidents of foreign countries who reside in the US are now more surveilled than ever. There have been a couple of prominent assassinations in the US after encryption was restricted to commercial purposes.. Domestic dissidents have yet to experience a crackdown, but the fear that one is coming soon has chilled some into ceasing their activism.
+* Ordinary people: Many people are confused about what they can encrypt and what they can't. Some accidentally encrypt too much and are charged with crimes. Some err on the safe side and become victims of identity theft.
+* Organized crime: A few prominent organized crime rings were caught because they stopped using encryption. However, the remaining ones have generally shifted their encrypted communications to be hidden within financial documents.
+* Petty criminals: Similarly, a number of petty criminals were caught because they did not choose to use encryption. Most of the more technically capable ones have turned to tools that automatically embed files within financial documents so as to achieve legal encryption.
+
+[[Play again->start]]
+
+
+:: cracking {"position":"425,800","size":"100,100"}
+### Cracking ciphers
+Unfortunately, cracking encryption itself is usually not practical. Consider AES-256, a 256 bit cipher. Every bit can be a 1 or a 0, which means there are 2^^256^^ possible keys. That's over 10^^79^^ keys - as in, a 1 followed by 79 zeros. Modern CPUs operate on the order of billions of operations per second. If we assume one key can be tried for every operation, that is about 10^^9^^ keys per second. For a single-core computer, it would take around 10^^50^^ times the age of the universe to find the right key. Of course, we could set it up so many computers work together. Let's now assume that everyone on the planet has their own supercomputer with a billion modern-day CPUs. If we assume everyone works together to crack one key,  that's still over 10^^30^^ times the age of the universe. These numbers are actually *optimistic* about the speed at which a given key could be checked so this would be a low-end estimate - the actual number would be much higher.
+
+This is why brute-force attacks on a key are simply infeasible. Theoretically, there could exist weaknesses in any given cipher that drastically reduce the time needed to crack it. However, if sufficient weaknesses were found to make an attack economical, most people would stop using that cipher and move on to a new one. The problem with cracking things economically would then immediately reassert itself until a weakness was found with the new cipher.
+
+[[What about quantum computers?->quantumCracking]]
+[[Back->backdoor0]]
+
+
+:: criminalsAndEncryption {"position":"75,325","size":"100,100"}
+### Criminals using encryption
+One of the biggest problems with regulating the use of encryption is that criminals do not have a habit of obeying laws. 
+
+Encrypting data requires planning in advance to do so, unless it is one the automated usages such as a browser. Even then, traces of activity generally remain on both PCs involved that must be erased or concealed with further encryption. That means that when investigations are frustrated due to the use of encryption, the suspect has put a great deal of forethought into committing a crime. What reason does one have to think that the prospect of committing a crime - something the suspect is already planning to do - would deter them from using encryption as part of a crime?
+
+Adding additional penalties to use of encryption to facillitate a crime would not be particularly helpful either. Prosecutors have incentives to indict suspects with the greatest number of charges possible, so they are quite likely to charge suspects with this whenever they can. As a result, any crime that involved a computer (or phone, or any digital device) could arguably fall under this proposed law because digital signatures on boot and encrypted home directories/operating system components are ubiquitous. As a result, such a law would result in a uniform increase in penalties for crimes without regard to the severity of the crime itself - instead, only the use of a digital device would be considered.
+
+In summary, the crime-preventing benefits of such usage-restricting proposals are not clear.
+
+(link: "Back")[(undo:)]
+
+
+:: digitalCommerce {"position":"575,675","size":"100,100"}
+### Digital commerce & encryption
+Digital commerce is fundamentally dependent on encryption to secure payment data. Without encryption, your payment details would be visible to every router or computer between yours and the shop you buy from. Furthermore, if someone tapped a line along the way, they could also see your details. They could then use those details to make you buy things for them. After having this happen a couple of times, it is quite likely you would stop using online stores since they would be costing you so much money.
+
+(link: "Back")[(undo:)]
+
+
+:: digitalSignatures {"position":"925,350","size":"100,100"}
+### Digital signatures
+Let's consider again the example where you have a key pair A and B. You've kept A hidden and shared B publicly. If you encrypt a message with key A, anyone can decrypt it with key B. This brings two properties: tamper-resistance and authentication.
+
+#### Tamper-resistance
+Let's say someone wants to impersonate you and change all of your messages to malcious things. Since they have key B, they can decrypt your message back to plaintext and change that plaintext. However, they can't re-encrypt it. If they encrypt with key B, only key A can decrypt it. Since you are the only person who knows key A, nobody else will be able to decrypt it, even though they have key B. Thus, the imposter would have to alter the ciphertext instead - but as already mentioned, the result will be that they just garble the message if they don't have key A.
+
+In other words, by encrypting with key A and sharing key B, you prevent anyone from tampering with your message along the way.
+
+#### Authentication
+Let's assume for a second that everyone knows for certain that you generated key B as part of a key pair and that you have kept the other key perfectly secret. Then, since your message can't have been tampered with if it decrypts with key B, it must have come from the holder of key A. That's you! In this way, you can demonstrate to everyone that you are the person behind this message. This is called authentication.
+
+#### Putting it together
+Basically, if you encrypt a message with your private key, and everyone knows your public key, you are 'digitally signing' the message. This action lets everyone know the message was from you, as well as that it wasn't tampered with. Oftentimes the public key is combined with some identifying information - your name, email, etc - to make what is called a "digital certificate".
+
+It's also worth noting that it is rare for an entire message to be encrypted in this way. Usually, we make a summary (usually a hash, if you know what those are) of the message and then encrypt that. This cuts down on CPU cycles and allows the signature to be detached from the file itself.
+
+#### Limitations of signatures
+There are some difficulties. If someone steals your private key, they can easily impersonate you. Additionally, it's hard to prove the owner of the private key is the same person that's on a certificate. I could make a certificate right now saying I am Todd Howard and start sending messages out there into the world. 
+
+The key theft problem can be (mostly) solved with good security practices. 
+
+The certificate owner problem is solved in an interesting way: with more certificates! Basically, we can digitally sign other people's certificates. There are entire businesses (certification authorities) made out of making sure the owner of the certificate is who they say they are. The certification authority will only digitally sign a certificate if they verify the owner. 
+
+There are some problems with this approach, mostly a result of the centralization. Another solution that is sometimes used is a "web of trust", which is a more decentralized model where many people mutually validate each other. In this case, you would trust the word of multiple people instead of one authority. 
+
+[[What do we use this stuff for, anyways?->encryptionUses]]
+[[Back->encryptionTypes]] 
+
+
+:: encryptionTypes {"position":"750,350","size":"100,100"}
+### Types of encryption
+There are two types of encryption: symmetric and asymmetric. 
+
+#### Symmetric cryptography
+Symmetric encryption is when you encrypt and decrypt with the same key. The advantage is that you don't need to remember two different keys. Additionally, computers are usually faster with this type of encryption for certain technical reasons. However, you run into a problem: if you're sending a message to someone else, how do you get the key to them if there aren't any channels you trust?
+
+
+#### Asymmetric cryptopgraphy
+Asymmetric cryptography involves key pairs. Suppose you have a pair of keys A and B. If A encrypts a plaintext into a ciphertext, B will decrypt that ciphertext into the plaintext. Similarly, if B encrypts a plaintext into a ciphertext, A will decrypt it. The advantage of a key pair is that you can share one of your keys while keeping the other hidden. Suppose you share B publicly but keep A to yourself. Then anyone can encrypt a message to you using B and send it to you. Since you know key A, you can decrypt it. 
+
+You can also do the reverse - encrypt a message with A and share that. Then, since you shared B with everyone, anyone could decrypt it. That may sound useless, but it's the principal idea behind digital signatures.
+
+[[What are digital signatures?->digitalSignatures]]
+[[Back->whatIsEncryption]] 
+
+
+:: encryptionUses {"position":"900,225","size":"100,100"}
+### Uses of encryption
+Encryption is ubiquitous in the digital world. If you've accessed this site, then I guarantee you've used every type of encryption we've covered so far.
+
+#### Digital signatures
+Unless you've messed with the BIOS of your computers, you used digital signatures before it even finished booting up. Remember how signatures can ensure the integrity of a message? If your computer is using Secure Boot - which it almost certainly has - it used a digital signature to verify that the kernel - the core of the operating system - hasn't been tampered with before loading it.
+
+Also, if you've ever used HTTPS - which the vast majority of web communication takes place over these days - your browser used digital certificates to verify that the server you connected to was who they say they were.
+
+#### Asymmetric encryption
+Besides digital signatures, asymmetric encryption has another use. The math is beyond the scope of this game, but basically, two parties can use asymmetric encryption to publicly exchange keys through untrusted channels. What this means is that your browser can start communicating securely without trusting any computer along the path to the website.
+
+#### Symmetric encryption
+This is the main thing people think of when encryption is mentioned with computers. You might encrypt your hard drive (or just parts of it) so that a thief can't steal your identity from your files if your laptop is stolen. Your medical records are encrypted to make sure nobody unauthorized looks at them in violation of federal law (or at least I hope they are encrypted). The spy agencies use encryption to communicate with their agents. Symmetric keys are used for these applications because they are generally faster and more space-efficient.
+
+Even your web traffic uses symmetric encryption. Once that secure connection is established, the first thing both parties do is agree on a symmetric cipher and common key that they will use. They then switch to this method of encryption over asymmetric encryption for the reasons mentioned above.
+
+[[I think I understand now and am ready to start making decisions about the future of encryption.->lawRoot]]
+[[Back->digitalSignatures]] 
+
+
+:: freeEncryptionRoot {"position":"375,225","size":"100,100"}
+### Deregulated encryption
+In the United States, this is more or less the status quo. There is a little ambiguity about when key disclosure - a requirement by the government to surrender encryption keys to the government so they can decrypt your devices or communications for the purposes of an investigation - is applicable. Other than this, there are no real limitations to the use of encryption. Note that in some industries - such as financial and medical - encryption is legally required as a means to secure data.
+
+However, there will be some negative consequences to keeping this status quo. Law enforcement may not be able to decrypt communications of some organized crime or terrorist organizations. This could conceivably lead to continued crime, up to and including terrorist attacks. Additionally, police officers may know that a suspect has child exploitative material, but be unable to prosecute them due to encryption hiding the images. This could potentially lead to the suspect escalating to acts child abuse when it could be prevented by an early arrest. 
+
+Are you willing to accept these consequences to your decision?
+
+[[Yes. What we have now is the least bad option.->statusQuoConsequences]]
+[[Is there an option where we can solve these problems without adding much regulation?->lowRegulationOption]]
+[[I'd like to look at more regulatory options before I decide.->lawRoot]]
+
+
+:: keyDisclosure0 {"position":"175,25","size":"100,100"}
+### Key disclosure
+Essentially, instead of relying on technical means to break encryption or on restricting its usage, key disclosure means the government will have you give them access to the unencrypted data. Since you know the relevant password or other means of access to the underlying data, requiring you to disclose that means does not weaken or limit the encryption itself. 
+
+Currently, the usage of key disclosure in the US is limited and it is somewhat ambiguous as to when it can be used.
+
+[[Why is that?->keyDisclosure1]]
+
+
+:: keyDisclosure1 {"position":"675,0","size":"100,100"}
+### Key disclosure
+The main issue with requiring someone to disclose a password to unlock encryption is that it might be a violation of the Fifth Amendment. This amendment protects individuals from being legally required to self-incriminate. If you know your encrypted device has illegal information on it, it is arguable that you are self-incriminating by directly giving the government access to material that would incriminate you. 
+
+The constitutionality here is not settled. If you want more details on the relevant case law, the Congressional Research Service has a <a href="https://crsreports.congress.gov/product/pdf/LSB/LSB10416" target="_blank">great article</a>  (Foster, 2020). You should be aware that this could prevent formally requiring key disclosure by law because such laws could be struck down by the courts.
+
+[[Are there any other things I should know about key disclosure?->keyDisclosure2]]
+
+
+:: keyDisclosure2 {"position":"850,50","size":"100,100"}
+### Key disclosure
+Besides constitutionality, there is the issue of abuse by the government. The US government has a long history of spying on and infiltrating dissident groups domestically. Given the extreme hostility between mainstream political factions right now, the definition of "dissident" is quite broad and seems to change with election cycles. If you are thinking of requiring key disclosure, consider carefully how it might be used to invade your privacy as punishment for your views.
+
+Relating to that, key disclosure is a serious violation of privacy. The best way to deal with this is to require a warrant, with similar burdens of proof as in-person searches of a person's residence. Without the requirement of a warrant, abuse of this privilege is much more likely to be a widespread occurance.
+
+Finally, a side benefit of requiring warrants makes it harder for individual government employees to abuse their power. After all, it's much harder to spy on your neighbor if you have to get a warrant and ask them directly for their encryption keys.
+
+[[What happens if I am ordered to disclose my keys but refuse to do so?->keyDisclosureContempt]]
+[[We should require key disclosure with a warrant.->requireDisclosureConsequences]]
+[[I like the ambiguous status quo best.->statusQuoConsequences]]
+[[I'd like to look at other options before I decide.->lawRoot]]
+
+
+:: keyDisclosureContempt {"position":"1100,225","size":"100,100"}
+### Key disclosure
+Assuming that key disclosure is considered constitutional and that it is backed by a warrant, the penalty would most likely be similar to other refusals of lawful court orders. You would be charged with contempt of court and held in prison until you either comply with the order or successfully appeal it.
+
+[[Back->keyDisclosure2]] 
+
+
+:: lawRoot {"position":"525,75","size":"100,100"}
+### Regulating encryption
+It is now your responsibility to decide how encryption should be regulated - or if it should even be regulated at all.
+
+Critics point to the difficulties encryption raises for law enforcement. With the privacy assurances it offers, criminals can communicate with each other that frustrates traditional investigative methods law enforcement would use. Furthermore, encryption can protect illegal content, such as child exploitative images.
+
+Proponents argue that the benefits of free use of encryption outweight the negatives. Our digital economy is dependent on the privacy and security encryption offers. Proponents also argue that encryption protects the individual's right to privacy. 
+
+Whatever you choose, expect to be challenged with the counterarguments the other side might use.
+
+[[We should increase regulation of encryption.->regulationRoot]]
+[[Encryption should be deregulated.->freeEncryptionRoot]]
+
+
+:: licenseRequired0 {"position":"200,450","size":"100,100"}
+### Requiring a license to use encryption
+The idea here is to try and keep encryption out of the hands of criminals by requiring a license to use it. Legitimate actors would still be able to use it for both speech and commercial purposes. One version of this might restrict the usage just to private companies.
+
+[[What's the catch?->licenseRequired1]]
+
+
+
+:: licenseRequired1 {"position":"100,575","size":"100,100"}
+### Requiring a license to use encryption
+This approach will most likely exacerbate existing inequalities if it does not end digital commerce. Encryption software is necessary on both ends for digital commerce, so restricting it to private companies would still lead to massive disruptions to the economy. This means that at least some individuals need access to encryption. As with most credentials and licensing, people who are in better financial circumstances will have an easier time getting access. This means disproportionately cutting off financially worse-off people from the digital economy. As a result, brick-and-mortar businesses in low-income areas may keep prices higher because a lack of access to cheaper, digital options in the local population means they effectively do not have to compete with these digital businesses. As a result, people in lower income areas may be charged more simply because they are, on average, lower income.
+
+Additionally, there is little evidence to indicate that licensing would reduce crime because [[criminals might simply not follow the laws->criminalsAndEncryption]].
+
+[[Requiring a license is the best option.->licenseRequiredConsequences]]
+[[I'd like to look at other options before I decide.->lawRoot]]
+
+
+:: licenseRequiredConsequences {"position":"100,700","size":"100,100"}
+### Requring a license to use encryption
+Here are the plausible consequences of legally requiring a license to use encryption.
+
+#### Winners
+* Law enforcement & domestic spy agencies: The lack of a license has deterred a few criminals from using encryption, which allowed law enforcement agencies to catch them. Additionally, arrests over unlicensed use of encryption have helped pad arrest stats somewhat. Still, these agencies wish that they could restrict the users even further.
+* Foreign spy agencies: Many high-profile dissidents from foreign countries have found it difficult to get encryption licenses in the United States. As such, they have chosen to obey the law, but this has come at the cost of being surveilled by their home countries.
+* Cybercriminals: Decreased use of encryption by small businesses and individuals has made it easier to commit identity theft. As such, the incidence rate of that crime has somewhat increased.
+
+#### Losers
+* Small businesses: The bureaucracy of obtaining a license is yet enough barrier to entry to the market for entrepreneurs. Those who chose to forgo encryption because they could not afford the cost or difficulty often lost their livelihoods due to cyberattacks on them or their customers.
+* Dissidents: Those dissidents of foreign countries who reside in the US have overwhelming applied for encryption licenses. Those who were denied a license are now more surveilled than ever.  Domestic dissidents have not experienced a crackdown yet, but the new laws have chilled a few into ceasing their political activities.
+* Victims of identity theft: While not the majority of people in the US, a substantial number were victims of identity theft as a result of not using encryption without a license.
+* Organized crime: A few prominent organized crime rings were compromised because they chose not to use encryption without a license. However, the others have used encryption under licenses from front companies or else turned to other ways to conceal their actitivies, like data obfuscation.
+* Petty criminals: Similarly, a number of petty criminals did not realize the government could look at all of their files and were therefore caught in short order.
+
+[[Play again->start]]
+
+
+:: limitUse {"position":"325,425","size":"100,100"}
+### Limiting the use of encryption
+One attempt to limit the disadvantages of encryption would be to limit who can use it and for what purpose. The idea is to avoid the total destruction of the digital economy that a full ban would cause.
+
+[[Require a license to use encryption->licenseRequired0]]
+[[Restrict the use of encryption to commercial purposes->commercialPurposes0]]
+
+
+:: lose {"position":"550,800","size":"100,100"}
+# You lose
+Why? Because it's funnier that way.
+
+[[Start over->start]]
+
+
+:: lowRegulationOption {"position":"325,100","size":"100,100"}
+Yes, there is one option that preserves the freedom to freely use encryption and therefore its security benefits. That option is to require key disclosure by users.
+
+[[What is key disclosure?->keyDisclosure0]]
+
+
+:: quantumCracking {"position":"425,925","size":"100,100"}
+### Quantum cracking
+Quantum computers are a little beyond the scope of this game. However, it's worth briefly summarizing how they might affect encryption. Quantum computers are known to be very, very good at breaking asymmetric encryption - good enough that you would not need a quantum computer the size of a planet for it to usable for this. There are also known ways that they can speed up attacks on symmetric encryption, but not enough to make it economical. We cannot rule out the possibility that there *might* be as-yet unknown ways for them to make attacks on symmetric ciphers practical, but to the best of my knowledge, no such method has been presented thusfar.
+
+The main issue is that we don't know when (or even if) large enough quantum computers will materialize. There is a good chance that we will have to deal with the consequences of cryptography for many years to come. Additionally, cryptography researchers are putting extensive work into developing quantum-resistant cryptography, so the same ethical issues with encryption could easily resurface later. As such, we should confront the issues surrounding cryptography now rather than wait for a  solution that might never materialize.
+
+[[Back->cracking]]
+
+
+:: regulationRoot {"position":"450,425","size":"100,100"}
+### Restricting encryption
+There are many ways encryption could be regulated, so only the most obvious or likely proposals are covered here. 
+
+The one thing they have in common is that restriction of the use of encryption necessarily diminishes both privacy and security.
+
+[[Ban encryption->banEncryption]]
+[[Use technical means to get around it when necessary->backdoor0]]
+[[Limit who can use it, and for what->limitUse]]
+
+
+:: requireDisclosureConsequences {"position":"1000,25","size":"100,100"}
+### Require key disclosure
+Assuming key disclosure passes constitutional tests, here are some plausible consequences.
+
+#### Winners
+* Law enforcement & domestic spy agencies: Key disclosure has helped law enforcement agencies break a few high-profile cases. Arrests and convictions are up somewhat. However, the digital arms race between criminals and police continues.
+
+#### Losers
+* Dissidents:  Many domestic dissidents have complained about this law. They have yet to experience a crackdown, but the fear that one is coming soon has chilled a few into ceasing their activism.
+* Organized crime: Several organized crime rings have been broken as a result of former members turning over encryption keys. However, many of the surviving ones have turned to additional measures to avoid detection, such as data obfuscation.
+* Petty criminals: While some of the more technically capable criminals have been able to substitute other methods of avoiding detection, many have been caught and forced to turn over their encryption keys. The decrypted evidence then led to their convictions.
+
+[[Play again->start]]
+
+
+:: start {"position":"625,225","size":"100,100"}
+In this game you will explore the issues relating to the regulation of encryption. It is a tricky subject, as there will be negative consequences to any action or inaction.
+
+First, how familiar are you with the high-level concepts in encryption? It is difficult to make good choices without an understanding of the field in question.
+
+[[I already know a lot about encryption.->lawRoot]]
+[[I could use a refresher first.->tldrWarning]]
+
+
+:: statusQuoConsequences {"position":"425,25","size":"100,100"}
+### Keep the status quo
+By keeping the status quo, there are no winners or losers relative to the status quo. Everything is still the same.
+
+This can be a blessing or a curse.
+
+[[Play again->start]]
+
+
+:: tldrWarning {"position":"625,400","size":"100,100"}
+Fair warning, there are a couple walls of text incoming. The intention is to let you scroll back and reference things instead of having to go back to the previous page. The game proper will not be so weighty.
+
+[[Got it.->whatIsEncryption]]
+
+
+:: whatIsEncryption {"position":"750,225","size":"100,100"}
+### What is encryption?
+Encryption occurs via algorithms called ciphers. These ciphers convert plaintext to ciphertext and back with a key. The reason you would do this is to secure the plaintext.
+
+Suppose you want to send a message to somebody without anyone snooping on your conversation. The message itself would be the <em>plaintext</em>. It's basically the data you want to secure. The cipher would then change that data using a <em>key</em> to a different form called the <em>ciphertext</em>. You would then give the ciphertext to your friend, who would decrypt the original message (plaintext) using a key. 
+
+The intention is for the ciphertext to be opaque to anyone without the key - they wouldn't understand your message. If that is the case, then you could have anyone carry that message for you and they would not be able to eavesdrop, no matter how snoopy they might be. Additionally, there is no easy way for an eavesdropper to tamper with your message. If they alter the ciphertext, chances are it will be gibberish if decrypted, and therefore your friend will know that something is up.
+
+#### Example
+Let's walk through a simple example of encryption. Suppose your message is 'cat'. One way you could encrypt it is to take each letter and replace it with the next one in the alphabet:
+
+- 'c' is replaced with 'd'
+- 'a' is replaced with 'b'
+- 't' is replaced with 'u'
+
+The ciphertext is then 'dbu'. Your friend could decrypt it by reversing the process:
+
+- 'd' is preceded by 'c' so it is replaced by 'c'
+- 'b' is similarly replaced by 'a'
+- 'u' is replaced by 't'.
+
+In this example, you can see the plaintext and the ciphertext, but where's the key? It's not obvious. 
+
+#### Another example
+Let's consider another example with the same plaintext, but shifting two places ahead:
+
+- 'c' is replaced with 'e' because 'e' is two letters after 'c'
+- 'a' is replaced by 'c'
+- 't' is replaced by 'v'
+
+In this case the ciphertext would be 'ecv'. 
+
+#### Ciphers and keys
+Both of these methods are pretty similar, but if you tried going one letter back on the second ciphertext, it wouldn't make a whole lot of sense (you'd get 'dbu'). In other words, it's not enough to know the general method (the cipher), you also need to know another piece of information (the key) to make sense of the ciphertext. In this case, the cipher is "move a certain number of letters forward in the alphabet." This is called the rotational cipher and while it can be done by hand, it isn't very secure. The key for this cipher would be the number of letters forward you look. The first example would have a key of 1 and the second would have a key of 2. 
+
+If you just tell your friend you're using the rotational cipher, it wouldn't be enough for them to easily figure out your message from the ciphertext because they would have to guess your key. In this case, they could try a bunch of numbers until something made sense. The third party carrying your message could also do the same, and since it wouldn't take them very long, this cipher isn't very secure. However, the idea here is that the method alone is not enough to decrypt the message - one must also have a key. This is what separates <em>encryption</em> from <em>obfuscation</em>.
+
+[[Got it. What types of encryption are there?->encryptionTypes]]
