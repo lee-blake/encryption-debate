@@ -36,12 +36,12 @@ Proponents argue that the benefits of free use of encryption outweight the negat
 
 Whatever you choose, expect to be challenged with the counterarguments the other side might use.
 
-[[I think we should lean towards regulating it-&gt;regulationRoot]]
-[[Encryption should be deregulated-&gt;freeEncryptionRoot]]</tw-passagedata><tw-passagedata pid="4" name="digitalSignatures" tags="" position="925,350" size="100,100">### Digital signatures
+[[We should increase regulation of encryption.-&gt;regulationRoot]]
+[[Encryption should be deregulated.-&gt;freeEncryptionRoot]]</tw-passagedata><tw-passagedata pid="4" name="digitalSignatures" tags="" position="925,350" size="100,100">### Digital signatures
 Let&#39;s consider again the example where you have a key pair A and B. You&#39;ve kept A hidden and shared B publicly. If you encrypt a message with key A, anyone can decrypt it with key B. This brings two properties: tamper-resistance and authentication.
 
 #### Tamper-resistance
-Let&#39;s same someone wants to impersonate you and change all of your messages to malcious things. Since they have key B, they can decrypt your message back to plaintext and change that plaintext. However, they can&#39;t re-encrypt it. If they encrypt with key B, only key A can decrypt it. Since you are the only person who knows key A, nobody else will be able to decrypt it, even though they have key B. Thus, the imposter would have to alter the ciphertext instead - but as already mentioned, the result will be that they just garble the message if they don&#39;t have key A.
+Let&#39;s say someone wants to impersonate you and change all of your messages to malcious things. Since they have key B, they can decrypt your message back to plaintext and change that plaintext. However, they can&#39;t re-encrypt it. If they encrypt with key B, only key A can decrypt it. Since you are the only person who knows key A, nobody else will be able to decrypt it, even though they have key B. Thus, the imposter would have to alter the ciphertext instead - but as already mentioned, the result will be that they just garble the message if they don&#39;t have key A.
 
 In other words, by encrypting with key A and sharing key B, you prevent anyone from tampering with your message along the way.
 
@@ -130,7 +130,7 @@ However, there will be some negative consequences to keeping this status quo. La
 
 Are you willing to accept these consequences to your decision?
 
-[[Is there an option where we can solve these options with much regulation-&gt;lowRegulationOption]]
+[[Is there an option where we can solve these problems without adding much regulation?-&gt;lowRegulationOption]]
 [[I&#39;d like to look at other options before I decide.-&gt;lawRoot]]</tw-passagedata><tw-passagedata pid="9" name="banEncryption" tags="" position="450,550" size="100,100">### Banning encryption
 This choice is fair to everyone, but only because it applies equally and is more or less equally bad for all parties involved.
 
@@ -141,6 +141,7 @@ This choice is fair to everyone, but only because it applies equally and is more
 [[I&#39;d like to look at other options before I decide.-&gt;lawRoot]]</tw-passagedata><tw-passagedata pid="10" name="backdoor0" tags="" position="300,550" size="100,100">### Installing backdoors in encryption
 One common proposal is to deliberately weaken encryption so that law enforcement can bypass it. The difficulty lies in doing this in a way that preserves the security against anyone else (hackers, eavesdroppers, etc). Usually, this needs to be accomplished by granting law enforcement access via a key. The reason is if usage of a method alone was enough to break encryption, anyone involved in the implementation - or who even read documents about it - could theoretically break all such uses of that encryption. This causes two main problems.
 
+[[Can&#39;t we just crack the encryption like hackers do?-&gt;cracking]]
 [[What are these problems?-&gt;backdoor1]]</tw-passagedata><tw-passagedata pid="11" name="limitUse" tags="" position="325,425" size="100,100">### Limiting the use of encryption
 One attempt to limit the disadvantages of encryption would be to limit who can use it and for what purpose. The idea is to avoid the total destruction of the digital economy that a full ban would cause.
 
@@ -207,6 +208,7 @@ Relating to that, key disclosure is a serious violation of privacy. The best way
 
 Finally, a side benefit of requiring warrants makes it harder for individual government employees to abuse their power. After all, it&#39;s much harder to spy on your neighbor if you have to get a warrant and ask them directly for their encryption keys.
 
+[[What happens if I am ordered to disclose my keys but refuse to do so?-&gt;keyDisclosureContempt]]
 [[I&#39;d like to look at other options before I decide.-&gt;lawRoot]]</tw-passagedata><tw-passagedata pid="26" name="backdoor3" tags="" position="300,925" size="100,100">Requiring different keys for each piece of hardware or software only marginally alleviates the problems. While the compromise of a single key only then compromises a single computer, the problem comes from aggregation. With hundreds of millions of devices, the government will need to store a massive number of keys in a manner where they can be accessed readily. This means that some sort of database is a must. If that database is compromised - whether by mistakes in security or just by some government employee who wants to make some extra money on the side - the security implications are essentially the same as if the one universal key in the previous scenario is compromised. 
 
 The reason for this is simple: automation. An attacker simply needs to use any heuristic the police use to associate a suspect with the relevant key to their device. By automating this heuristic, the attack may be conducted on scales that would be impossible for a human. Even if the heuristic only works 1% of the time, that&#39;s over 3 million Americans whose devices are compromised. This illustrates how we cannot always apply the rules from the analog world to the digital one: digital problems can often be readily scaled to affect massive numbers of people in a way that analog ones cannot.
@@ -216,13 +218,26 @@ The reason for this is simple: automation. An attacker simply needs to use any h
 
 (link: &quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="28" name="tldrWarning" tags="" position="625,400" size="100,100">Fair warning, there are a couple walls of text incoming. The intention is to let you scroll back and reference things instead of having to go back to the previous page. The game proper will not be so weighty.
 
-[[Got it.-&gt;whatIsEncryption]]</tw-passagedata><tw-passagedata pid="29" name="backdoor4" tags="" position="300,1050" size="100,100">The debate around adding backdoors is not new. The EFF has documented &lt;a href=&quot;https://www.eff.org/deeplinks/2015/04/clipper-chips-birthday-looking-back-22-years-key-escrow-failures&quot; target=&quot;_blank&quot;&gt;regular attempts&lt;/a&gt; by the government to add backdoors to encryption technology.
+[[Got it.-&gt;whatIsEncryption]]</tw-passagedata><tw-passagedata pid="29" name="backdoor4" tags="" position="300,1050" size="100,100">The debate around adding backdoors is not new. The Electronic Frontier Foundation, a nonprofit that focuses on civil liberty issues in computing, has documented &lt;a href=&quot;https://www.eff.org/deeplinks/2015/04/clipper-chips-birthday-looking-back-22-years-key-escrow-failures&quot; target=&quot;_blank&quot;&gt;regular attempts&lt;/a&gt; by the government to add backdoors to encryption technology.
 
 One of the more famous attempts to add a backdoor was the Clipper Chip incident in the 1990s. To summarize, the government attempted to require chips to be used for encrypted phone communications so police could bypass encryption for the purpose of wiretapping. This implementation used the &quot;multiple keys&quot; method. This proposal cause an outcry in the security community and led to development of many of the widely used open-source cryptography tools we see today. A more detailed history can be found &lt;a href=&quot;https://www.cryptomuseum.com/crypto/usa/clipper.htm&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.
 
-On thing worth noting is that one company did implement the Clipper Chip. Soon afterwards, it was found that it was possible to replace the key used for encryption in the devices. This meant that the phone could be modified to be used without allowing government bypass of the encryption. In other words, this implementation introduced a security vulnerability *and* failed to accomplish its intended purpose because criminals could simply modify it to prevent wiretapping.
+One thing worth noting is that one company did implement the Clipper Chip. Soon afterwards, it was found that it was possible to replace the key used for encryption in the devices. This meant that the phone could be modified to be used without allowing government bypass of the encryption. In other words, this implementation introduced a security vulnerability *and* failed to accomplish its intended purpose because criminals could simply modify it to prevent wiretapping.
 
-[[I&#39;d like to look at other options before I decide.-&gt;lawRoot]]</tw-passagedata></tw-storydata>
+
+[[I&#39;d like to look at other options before I decide.-&gt;lawRoot]]</tw-passagedata><tw-passagedata pid="30" name="keyDisclosureContempt" tags="" position="1100,225" size="100,100">Assuming that key disclosure is considered constitutional and that it is backed by a warrant, the penalty would most likely be similar to other refusals of lawful court orders. You would be charged with contempt of court and held in prison until you either comply with the order or successfully appeal it.
+
+[[Back-&gt;keyDisclosure2]] </tw-passagedata><tw-passagedata pid="31" name="cracking" tags="" position="425,800" size="100,100">### Cracking keys
+Unfortunately, cracking encryption itself is usually not practical. Consider AES-256, a 256 bit cipher. Every bit can be a 1 or a 0, which means there are 2^^256^^ possible keys. That&#39;s over 10^^79^^ keys - as in, a 1 followed by 79 zeros. Modern CPUs operate on the order of billions of operations per second. If we assume one key can be tried for every operation, that is about 10^^9^^ keys per second. For a single-core computer, it would take around 10^^50^^ times the age of the universe to find the right key. Of course, we could set it up so many computers work together. Let&#39;s now assume that everyone on the planet has their own supercomputer with a billion modern-day CPUs. If we assume everyone works together to crack one key,  that&#39;s still over 10^^30^^ times the age of the universe. These numbers are actually *optimistic* about the speed at which a given key could be checked so this would be a low-end estimate - the actual number would be much higher.
+
+This is why brute-force attacks on a key are simply infeasible. Theoretically, there could exist weaknesses in any given cipher that drastically reduce the time needed to crack it. However, if sufficient weaknesses were found to make an attack economical, most people would stop using that cipher and move on to a new one. The problem with cracking things economically would then immediately reassert itself until a weakness was found with the new cipher.
+
+[[What about quantum computers-&gt;quantumCracking]]
+[[Okay, so to make things practical, we need a backdoor.-&gt;backdoor0]]</tw-passagedata><tw-passagedata pid="32" name="quantumCracking" tags="" position="425,925" size="100,100">Quantum computers are a little beyond the scope of this game. However, it&#39;s worth briefly summarizing how they might affect encryption. Quantum computers are known to be very, very good at breaking asymmetric encryption - good enough that you would not need a quantum computer the size of a planet for it to usable for this. There are also known ways that they can speed up attacks on symmetric encryption, but not enough to make it economical. We cannot rule out the possibility that there *might* be as-yet unknown ways for them to make attacks on symmetric ciphers practical, but to the best of my knowledge, no such method has been presented thusfar.
+
+The main issue is that we don&#39;t know when (or even if) large enough quantum computers will materialize. There is a good chance that we will have to deal with the consequences of cryptography for many years to come. Additionally, cryptography researchers are putting extensive work into developing quantum-resistant cryptography, so the same ethical issues with encryption could easily resurface later. As such, we should confront the issues surrounding cryptography now rather than wait for a  solution that might never materialize.
+
+[[Back-&gt;cracking]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
