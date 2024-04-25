@@ -4,6 +4,20 @@ This is a short project illustrating the challenges of regulating encryption. It
 ## Play the game
 You can access the game [here](https://lee-blake.github.io/encryption-debate/).
 
+### List of endings
+You will know you have seen all endings when you have gone through the following:
+- Regulate
+  - Regulate usage
+    - Commercial purposes only
+    - Require a license
+  - Backdoor
+  - Ban encryption
+    - Ban it
+    - Try and solve the economy with blockchain
+- Deregulate
+  - Status quo
+  - Key disclosure
+
 ## Motivation
 This game covers the basics of encryption and some of the more common proposals to regulate it. It also covers some bad ideas to illustrate why we have arrived at the proposals we have now. A basic introduction to encryption is included with the game as a way to make it at least somewhat accessible on its own to a general audience. 
 
